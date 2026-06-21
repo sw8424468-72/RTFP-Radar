@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Radar Scanner + Tool Wheel (Leaflet Demo)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="./toolwheel.css"/>
+  <style>
+    html,body,#map{height:100%;margin:0;padding:0}
+    .controls {
+      position: absolute; left: 12px; top: 12px; z-index:1200;
+      background: rgba(255,255,255,0.9); padding:8px; border-radius:6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.25);
+      font-family: system-ui, Arial, sans-serif;
+    }
+    .controls button { margin:4px; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="controls">
+    <button id="place-node">Place Node (click map)</button>
+    <button id="start-scan">Start Scan (s)</button>
+    <button id="stop-scan">Stop Scan</button>
+    <label><input type="checkbox" id="night-toggle"> Night vision</label>
+    <div style="margin-top:6px;font-size:12px;color:#333">Double-click radar circle to toggle size</div>
+  </div>
+
+  <div id="tool-wheel" class="tool-wheel closed" aria-hidden="true"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
